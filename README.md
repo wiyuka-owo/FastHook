@@ -16,11 +16,11 @@
 #include "UnrealAdapter.hpp" 
 #include "imgui.h"
 
-MIXIN_OFFSET(Weapon_ConsumeAmmo, "", 0x1873A20, bool, __fastcall, (void* _this, uint8_t isSomething)) {
+MIXIN_OFFSET(Weapon_ConsumeAmmo, "", 0x1800000, bool, __fastcall, (void* _this, uint8_t isSomething)) {
     return Original_Weapon_ConsumeAmmo(_this, isSomething);
 }
 
-MIXIN_UNREAL_PE_POST(CameraTick, "Function BP_FSDCameraManager.BP_FSDCameraManager_C.ReceiveTick") {
+MIXIN_UNREAL_PE_POST(CameraTick, "Function BP_CameraManager.BP_CameraManager_C.ReceiveTick") {
     if (!Context) return;
 }
 
